@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { Film } from './IFilm';
+import FilmsDisplay from './FilmsDisplay';
+import { IFilm } from './IFilm';
 
 function App() {
 
-  const [ filmState, setFilmState ] = useState<Array<Film>>([]);
+  const [ filmState, setFilmState ] = useState<Array<IFilm>>([]);
 
   useEffect(() => {
     getFilms();
@@ -26,7 +27,7 @@ function App() {
     <div className="App">
       <h1>Welcome to Testing API Calls with MSW</h1>
       {
-        filmState && filmState.map(film => <p>{film.title}</p>)
+        filmState && <FilmsDisplay films={filmState}/>
       }
     </div>
   );
