@@ -1,6 +1,6 @@
 # React API Testing with MSW
 
-Testing API calls in React, TypeScript with Mock Service Worker Library
+Testing API calls in React, TypeScript with Mock Service Worker Library... definitely still not in love with React and TypeScript yet...
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
