@@ -8,12 +8,17 @@ const server = setupServer(rest.get("https://ghibliapi.herokuapp.com/films/",
   (req, res, ctx) => { 
     return res(
       ctx.status(200, 'Mocked OK Status'),
-      ctx.json({
-        data: [{
-          id: 1,
-          title: 'Castle in the Sky',
-        }]
-      }),
+      ctx.json(
+        [
+          {
+            id: '1',
+            title: 'Castle in the Sky',
+          },{
+            id: '2',
+            title: 'Another film title',
+          }
+        ]
+      ),
     )
   })
 );
@@ -30,7 +35,7 @@ test('renders h1 tag with title of app', () => {
   expect(h1Element).toBeInTheDocument();
 });
 
-xtest('renders Castle in the Sky', async()  => {
+test('renders Castle in the Sky', async()  => {
 
   render(<App />); 
   await waitFor(() => screen.findByText('Films:'));
